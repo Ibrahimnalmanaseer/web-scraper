@@ -16,7 +16,7 @@ def get_citations_needed_count(url):
     soup=BeautifulSoup(web_page,'html.parser')
 
     citation_count=len(soup.find_all(title='Wikipedia:Citation needed'))
-    return citation_count
+    print (f'({citation_count}) Citation needed')
 
 
 def get_citations_needed_report(url):
@@ -39,4 +39,6 @@ def get_citations_needed_report(url):
                 f.write(i.text +'\n')
 
 
-# get_citations_needed_report('https://en.wikipedia.org/wiki/Michelangelo')
+get_citations_needed_count('https://en.wikipedia.org/wiki/Michelangelo')
+
+get_citations_needed_report('https://en.wikipedia.org/wiki/Michelangelo')
